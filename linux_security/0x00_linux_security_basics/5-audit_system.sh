@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo auditd
+sudo lynis
