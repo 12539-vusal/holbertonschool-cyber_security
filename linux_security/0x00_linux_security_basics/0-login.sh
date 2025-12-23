@@ -1,1 +1,1 @@
-sudo last -n5 -F
+sudo last -n 5 -F
