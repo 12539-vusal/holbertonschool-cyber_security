@@ -1,0 +1,1 @@
+tcp.flags.syn == 1 || tcp.flags == 0x10 || tcp.flags.reset == 1
