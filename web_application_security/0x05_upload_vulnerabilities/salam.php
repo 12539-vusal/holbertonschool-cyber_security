@@ -1,1 +1,3 @@
-<?php readfile('FLAG_2.txt') ?>
+‰PNG
+
+adfile('FLAG_2.txt') ?>
