@@ -1,0 +1,615 @@
+{
+  "flags": [],
+  "responses": {
+    "Yosri Musk (OWN)": {
+      "message": [
+        {
+          "balance": 884.5999999999999,
+          "cards_id": [
+            "d40901f1a15a425f9bd28cc456361257"
+          ],
+          "created_at": 1774808021,
+          "customer_id": "7b6566c2282545cca1b8dafbba2590d6",
+          "id": "5660050c9db141fab7beb2e0cc617fb5",
+          "number": "105412819662",
+          "routing": "106190000",
+          "updated_at": 1774812536
+        },
+        {
+          "balance": 1546.3,
+          "cards_id": [
+            "eb156232e2b246d9a5f1e303e564ec72",
+            "667dae3f4b6146ba9615c419b68f9478"
+          ],
+          "created_at": 1774808022,
+          "customer_id": "7b6566c2282545cca1b8dafbba2590d6",
+          "id": "e87db591dedd4ec58c2601ec15f9b9bd",
+          "number": "103862784354",
+          "routing": "106190000",
+          "updated_at": 1774813849
+        }
+      ],
+      "status": "success"
+    },
+    "Linda Robinson": {
+      "message": [
+        {
+          "balance": 445.5,
+          "cards_id": [
+            "b6d1a9bab1c14aa08cba2ef20a9d33fe",
+            "808a29cf014242ed920226a8f94caa2d"
+          ],
+          "created_at": 1774808008,
+          "customer_id": "20f79b3b956a4cdeb167470369e279e2",
+          "id": "2ecc2dffc9a04b30882968a98979a4c2",
+          "number": "108697427867",
+          "routing": "106190007",
+          "updated_at": 1774812536
+        },
+        {
+          "balance": 1720.6,
+          "cards_id": [
+            "465bff1fd4f243799e07407c81747e2a"
+          ],
+          "created_at": 1774808008,
+          "customer_id": "20f79b3b956a4cdeb167470369e279e2",
+          "id": "acff92d3d8c545c7b2b8130d4eaba9ad",
+          "number": "103588352410",
+          "routing": "106190007",
+          "updated_at": 1774813849
+        }
+      ],
+      "status": "success"
+    },
+    "Robert Martinez": {
+      "message": [
+        {
+          "balance": 77.0,
+          "cards_id": [
+            "1720519d7cef403fb7ba8481f2abeb59"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "c74fc9478a0a4674bd03d36a919b28a5",
+          "id": "ac6b2a3cbf5648959ad24401b3f6ce12",
+          "number": "105530959512",
+          "routing": "106190006",
+          "updated_at": 1774808009
+        },
+        {
+          "balance": 1323.4,
+          "cards_id": [
+            "7a2ea745ca1c49babad82bc91708c49a",
+            "422283305d9a4489af83977874333d66"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "c74fc9478a0a4674bd03d36a919b28a5",
+          "id": "a9d05c18d01f4f71abe8dd0a24583a4b",
+          "number": "107900565299",
+          "routing": "106190003",
+          "updated_at": 1774808009
+        }
+      ],
+      "status": "success"
+    },
+    "Patricia Garcia": {
+      "message": [
+        {
+          "balance": 293.5,
+          "cards_id": [
+            "e58f4b395255401c92f5055ef6d42f5b"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "9e887e899e484dc685f4442b643404fe",
+          "id": "6ff2044b20fd47efb6cc4e852c427573",
+          "number": "103904196048",
+          "routing": "106190004",
+          "updated_at": 1774808027
+        },
+        {
+          "balance": 2022.3,
+          "cards_id": [
+            "eeb844d7ce8141caabb26bcaec65ad5f",
+            "afbe74eed3154c2eb494d10489457cae"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "9e887e899e484dc685f4442b643404fe",
+          "id": "09c9795fb634488db2440728a5d42256",
+          "number": "108059236314",
+          "routing": "106190002",
+          "updated_at": 1774808027
+        }
+      ],
+      "status": "success"
+    },
+    "James Thompson": {
+      "message": [
+        {
+          "balance": 1134.4,
+          "cards_id": [
+            "3aa598894eb648899dc678a09da9cf25"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "8de2a1df9e7245dfb580ca06056e0cfc",
+          "id": "44ec481974954efb8a5b43ff58d0baf1",
+          "number": "103705063540",
+          "routing": "106190009",
+          "updated_at": 1774808010
+        },
+        {
+          "balance": 127.19999999999999,
+          "cards_id": [
+            "7d2ddabbb3fd4016ae19710dba433202",
+            "e4d2cd26286f4c7e80a66dfa048d5051"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "8de2a1df9e7245dfb580ca06056e0cfc",
+          "id": "6ab861adfd97427caece4a4179772f20",
+          "number": "102750894305",
+          "routing": "106190008",
+          "updated_at": 1774808010
+        }
+      ],
+      "status": "success"
+    },
+    "Elizabeth Martin": {
+      "message": [
+        {
+          "balance": 123.80000000000001,
+          "cards_id": [
+            "a78f1ab331414d3789f9d55efea7948a"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "bb6259382d63430796196a7102556e6b",
+          "id": "b77e46932d8943a6bfef812e4535db02",
+          "number": "103838144252",
+          "routing": "106190005",
+          "updated_at": 1774808029
+        },
+        {
+          "balance": 284.0,
+          "cards_id": [
+            "752fa7835e984323a8018ade50303d04",
+            "983d670391e9485c98facae8c07092e9"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "bb6259382d63430796196a7102556e6b",
+          "id": "d28592db142246dc9f568fb7c01b66ad",
+          "number": "107132795133",
+          "routing": "106190007",
+          "updated_at": 1774808029
+        }
+      ],
+      "status": "success"
+    },
+    "Brian Harris": {
+      "message": [
+        {
+          "balance": 100.9,
+          "cards_id": [
+            "c288dc18e688442b993af28d9240adb1"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "eda7fcbbff144a7a8aab04eefd9c4311",
+          "id": "c6b57dfbe78e4ecf91b065b295f13813",
+          "number": "104171523919",
+          "routing": "106190007",
+          "updated_at": 1774808011
+        },
+        {
+          "balance": 1881.8,
+          "cards_id": [
+            "1a1fb7768616431a874fb6643ebddf30",
+            "3f7b3da24234415e8cd9a4d078cedd43"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "eda7fcbbff144a7a8aab04eefd9c4311",
+          "id": "5da2a4373312420cbaa7a13baed57676",
+          "number": "105478536598",
+          "routing": "106190006",
+          "updated_at": 1774808011
+        }
+      ],
+      "status": "success"
+    },
+    "Megan White": {
+      "message": [
+        {
+          "balance": 329.1,
+          "cards_id": [
+            "5a43162fff4d425ea409ccf1cd7a749b"
+          ],
+          "created_at": 1774808012,
+          "customer_id": "59b0e6f10a5b4f89aa08f7ccf975822a",
+          "id": "c1ffe2146b594b4aa8028af342959c61",
+          "number": "103295659517",
+          "routing": "106190000",
+          "updated_at": 1774808030
+        },
+        {
+          "balance": 1503.6,
+          "cards_id": [
+            "4a0a655714bc46e48878a02fbf2a201f",
+            "76ea4dcc80b5467391ba9cb9917498f8"
+          ],
+          "created_at": 1774808012,
+          "customer_id": "59b0e6f10a5b4f89aa08f7ccf975822a",
+          "id": "c52f28fe85c640eb9af91bfbad534ab5",
+          "number": "109024221955",
+          "routing": "106190000",
+          "updated_at": 1774808031
+        }
+      ],
+      "status": "success"
+    },
+    "Mark Jackson": {
+      "message": [
+        {
+          "balance": 1608.8,
+          "cards_id": [
+            "176c3c526f234085a4b2840373d85c87"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "980ef77f82074fefb44d1fe1ea0599a0",
+          "id": "c4c67ed0d9b0429496f8d56f1da91a81",
+          "number": "101161203277",
+          "routing": "106190008",
+          "updated_at": 1774808013
+        },
+        {
+          "balance": 1320.1,
+          "cards_id": [
+            "0c9e5122840b4ca0b324ba3511b1ac88",
+            "361502631ae84a6683378c857ef9b32c"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "980ef77f82074fefb44d1fe1ea0599a0",
+          "id": "5d51b09150c5411ba060e4c331f5f62e",
+          "number": "101350696937",
+          "routing": "106190002",
+          "updated_at": 1774808013
+        }
+      ],
+      "status": "success"
+    },
+    "Ashley Thomas": {
+      "message": [
+        {
+          "balance": 169.7,
+          "cards_id": [
+            "311953b93a5d4193befb7ce29fb13b32"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "745eb4452f9a41c0a648a7d1128d156a",
+          "id": "1f996890e16d4a4c95fe8cfedd6931a8",
+          "number": "103423595777",
+          "routing": "106190005",
+          "updated_at": 1774808033
+        },
+        {
+          "balance": 451.0,
+          "cards_id": [
+            "31dfc3f432cd4747802b9a63566cf75b",
+            "769f5c3eaad54ec68491f77890c3e06b"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "745eb4452f9a41c0a648a7d1128d156a",
+          "id": "89b91610be8e41939cfa59fa156df2f5",
+          "number": "105691714843",
+          "routing": "106190007",
+          "updated_at": 1774808033
+        }
+      ],
+      "status": "success"
+    },
+    "David Anderson": {
+      "message": [
+        {
+          "balance": 1591.3,
+          "cards_id": [
+            "774be777cd8340f2b1cd613830165db5"
+          ],
+          "created_at": 1774808014,
+          "customer_id": "6a6bb6e09be745b19d6559020522e2fc",
+          "id": "2c80806be67646638e82c9c5bdb2c3b1",
+          "number": "103800983875",
+          "routing": "106190002",
+          "updated_at": 1774808014
+        },
+        {
+          "balance": 136.4,
+          "cards_id": [
+            "694c30585cc54884bd35f991ebd1643a",
+            "5a133d8c951f4da6b89150b8f6bbbffe"
+          ],
+          "created_at": 1774808014,
+          "customer_id": "6a6bb6e09be745b19d6559020522e2fc",
+          "id": "e1479d43584c4ce1817d7c596ed54aa3",
+          "number": "103686369568",
+          "routing": "106190000",
+          "updated_at": 1774808014
+        }
+      ],
+      "status": "success"
+    },
+    "ALL_IN_ONE": {
+      "message": [
+        {
+          "balance": 77.0,
+          "cards_id": [
+            "1720519d7cef403fb7ba8481f2abeb59"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "c74fc9478a0a4674bd03d36a919b28a5",
+          "id": "ac6b2a3cbf5648959ad24401b3f6ce12",
+          "number": "105530959512",
+          "routing": "106190006",
+          "updated_at": 1774808009
+        },
+        {
+          "balance": 1323.4,
+          "cards_id": [
+            "7a2ea745ca1c49babad82bc91708c49a",
+            "422283305d9a4489af83977874333d66"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "c74fc9478a0a4674bd03d36a919b28a5",
+          "id": "a9d05c18d01f4f71abe8dd0a24583a4b",
+          "number": "107900565299",
+          "routing": "106190003",
+          "updated_at": 1774808009
+        },
+        {
+          "balance": 1134.4,
+          "cards_id": [
+            "3aa598894eb648899dc678a09da9cf25"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "8de2a1df9e7245dfb580ca06056e0cfc",
+          "id": "44ec481974954efb8a5b43ff58d0baf1",
+          "number": "103705063540",
+          "routing": "106190009",
+          "updated_at": 1774808010
+        },
+        {
+          "balance": 127.19999999999999,
+          "cards_id": [
+            "7d2ddabbb3fd4016ae19710dba433202",
+            "e4d2cd26286f4c7e80a66dfa048d5051"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "8de2a1df9e7245dfb580ca06056e0cfc",
+          "id": "6ab861adfd97427caece4a4179772f20",
+          "number": "102750894305",
+          "routing": "106190008",
+          "updated_at": 1774808010
+        },
+        {
+          "balance": 100.9,
+          "cards_id": [
+            "c288dc18e688442b993af28d9240adb1"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "eda7fcbbff144a7a8aab04eefd9c4311",
+          "id": "c6b57dfbe78e4ecf91b065b295f13813",
+          "number": "104171523919",
+          "routing": "106190007",
+          "updated_at": 1774808011
+        },
+        {
+          "balance": 1881.8,
+          "cards_id": [
+            "1a1fb7768616431a874fb6643ebddf30",
+            "3f7b3da24234415e8cd9a4d078cedd43"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "eda7fcbbff144a7a8aab04eefd9c4311",
+          "id": "5da2a4373312420cbaa7a13baed57676",
+          "number": "105478536598",
+          "routing": "106190006",
+          "updated_at": 1774808011
+        },
+        {
+          "balance": 1608.8,
+          "cards_id": [
+            "176c3c526f234085a4b2840373d85c87"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "980ef77f82074fefb44d1fe1ea0599a0",
+          "id": "c4c67ed0d9b0429496f8d56f1da91a81",
+          "number": "101161203277",
+          "routing": "106190008",
+          "updated_at": 1774808013
+        },
+        {
+          "balance": 1320.1,
+          "cards_id": [
+            "0c9e5122840b4ca0b324ba3511b1ac88",
+            "361502631ae84a6683378c857ef9b32c"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "980ef77f82074fefb44d1fe1ea0599a0",
+          "id": "5d51b09150c5411ba060e4c331f5f62e",
+          "number": "101350696937",
+          "routing": "106190002",
+          "updated_at": 1774808013
+        },
+        {
+          "balance": 1591.3,
+          "cards_id": [
+            "774be777cd8340f2b1cd613830165db5"
+          ],
+          "created_at": 1774808014,
+          "customer_id": "6a6bb6e09be745b19d6559020522e2fc",
+          "id": "2c80806be67646638e82c9c5bdb2c3b1",
+          "number": "103800983875",
+          "routing": "106190002",
+          "updated_at": 1774808014
+        },
+        {
+          "balance": 136.4,
+          "cards_id": [
+            "694c30585cc54884bd35f991ebd1643a",
+            "5a133d8c951f4da6b89150b8f6bbbffe"
+          ],
+          "created_at": 1774808014,
+          "customer_id": "6a6bb6e09be745b19d6559020522e2fc",
+          "id": "e1479d43584c4ce1817d7c596ed54aa3",
+          "number": "103686369568",
+          "routing": "106190000",
+          "updated_at": 1774808014
+        },
+        {
+          "balance": 293.5,
+          "cards_id": [
+            "e58f4b395255401c92f5055ef6d42f5b"
+          ],
+          "created_at": 1774808009,
+          "customer_id": "9e887e899e484dc685f4442b643404fe",
+          "id": "6ff2044b20fd47efb6cc4e852c427573",
+          "number": "103904196048",
+          "routing": "106190004",
+          "updated_at": 1774808027
+        },
+        {
+          "balance": 2022.3,
+          "cards_id": [
+            "eeb844d7ce8141caabb26bcaec65ad5f",
+            "afbe74eed3154c2eb494d10489457cae"
+          ],
+          "created_at": 1774808010,
+          "customer_id": "9e887e899e484dc685f4442b643404fe",
+          "id": "09c9795fb634488db2440728a5d42256",
+          "number": "108059236314",
+          "routing": "106190002",
+          "updated_at": 1774808027
+        },
+        {
+          "balance": 123.80000000000001,
+          "cards_id": [
+            "a78f1ab331414d3789f9d55efea7948a"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "bb6259382d63430796196a7102556e6b",
+          "id": "b77e46932d8943a6bfef812e4535db02",
+          "number": "103838144252",
+          "routing": "106190005",
+          "updated_at": 1774808029
+        },
+        {
+          "balance": 284.0,
+          "cards_id": [
+            "752fa7835e984323a8018ade50303d04",
+            "983d670391e9485c98facae8c07092e9"
+          ],
+          "created_at": 1774808011,
+          "customer_id": "bb6259382d63430796196a7102556e6b",
+          "id": "d28592db142246dc9f568fb7c01b66ad",
+          "number": "107132795133",
+          "routing": "106190007",
+          "updated_at": 1774808029
+        },
+        {
+          "balance": 329.1,
+          "cards_id": [
+            "5a43162fff4d425ea409ccf1cd7a749b"
+          ],
+          "created_at": 1774808012,
+          "customer_id": "59b0e6f10a5b4f89aa08f7ccf975822a",
+          "id": "c1ffe2146b594b4aa8028af342959c61",
+          "number": "103295659517",
+          "routing": "106190000",
+          "updated_at": 1774808030
+        },
+        {
+          "balance": 1503.6,
+          "cards_id": [
+            "4a0a655714bc46e48878a02fbf2a201f",
+            "76ea4dcc80b5467391ba9cb9917498f8"
+          ],
+          "created_at": 1774808012,
+          "customer_id": "59b0e6f10a5b4f89aa08f7ccf975822a",
+          "id": "c52f28fe85c640eb9af91bfbad534ab5",
+          "number": "109024221955",
+          "routing": "106190000",
+          "updated_at": 1774808031
+        },
+        {
+          "balance": 169.7,
+          "cards_id": [
+            "311953b93a5d4193befb7ce29fb13b32"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "745eb4452f9a41c0a648a7d1128d156a",
+          "id": "1f996890e16d4a4c95fe8cfedd6931a8",
+          "number": "103423595777",
+          "routing": "106190005",
+          "updated_at": 1774808033
+        },
+        {
+          "balance": 451.0,
+          "cards_id": [
+            "31dfc3f432cd4747802b9a63566cf75b",
+            "769f5c3eaad54ec68491f77890c3e06b"
+          ],
+          "created_at": 1774808013,
+          "customer_id": "745eb4452f9a41c0a648a7d1128d156a",
+          "id": "89b91610be8e41939cfa59fa156df2f5",
+          "number": "105691714843",
+          "routing": "106190007",
+          "updated_at": 1774808033
+        },
+        {
+          "balance": 884.5999999999999,
+          "cards_id": [
+            "d40901f1a15a425f9bd28cc456361257"
+          ],
+          "created_at": 1774808021,
+          "customer_id": "7b6566c2282545cca1b8dafbba2590d6",
+          "id": "5660050c9db141fab7beb2e0cc617fb5",
+          "number": "105412819662",
+          "routing": "106190000",
+          "updated_at": 1774812536
+        },
+        {
+          "balance": 445.5,
+          "cards_id": [
+            "b6d1a9bab1c14aa08cba2ef20a9d33fe",
+            "808a29cf014242ed920226a8f94caa2d"
+          ],
+          "created_at": 1774808008,
+          "customer_id": "20f79b3b956a4cdeb167470369e279e2",
+          "id": "2ecc2dffc9a04b30882968a98979a4c2",
+          "number": "108697427867",
+          "routing": "106190007",
+          "updated_at": 1774812536
+        },
+        {
+          "balance": 1546.3,
+          "cards_id": [
+            "eb156232e2b246d9a5f1e303e564ec72",
+            "667dae3f4b6146ba9615c419b68f9478"
+          ],
+          "created_at": 1774808022,
+          "customer_id": "7b6566c2282545cca1b8dafbba2590d6",
+          "id": "e87db591dedd4ec58c2601ec15f9b9bd",
+          "number": "103862784354",
+          "routing": "106190000",
+          "updated_at": 1774813849
+        },
+        {
+          "balance": 1720.6,
+          "cards_id": [
+            "465bff1fd4f243799e07407c81747e2a"
+          ],
+          "created_at": 1774808008,
+          "customer_id": "20f79b3b956a4cdeb167470369e279e2",
+          "id": "acff92d3d8c545c7b2b8130d4eaba9ad",
+          "number": "103588352410",
+          "routing": "106190007",
+          "updated_at": 1774813849
+        }
+      ],
+      "status": "success"
+    }
+  }
+}
