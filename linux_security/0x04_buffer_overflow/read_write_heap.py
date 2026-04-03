@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 read_write_heap.py - İşləyən prosesin heap yaddaşını dəyişdirir.
 
