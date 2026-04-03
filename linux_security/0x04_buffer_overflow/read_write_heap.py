@@ -1,144 +1,151 @@
 #!/usr/bin/python3
 """
-read_write_heap.py - İşləyən prosesin heap yaddaşını dəyişdirir.
+read_write_heap.py
 
-İstifadə: sudo python3 read_write_heap.py <PID> <axtarılan_string> <yeni_string>
-Misal:     sudo python3 read_write_heap.py 6515 Holberton maroua
+This script searches for a string in the heap of a running process and
+replaces it with another string of the same length or less.
+
+Usage:
+    ./read_write_heap.py <pid> <search_string> <replace_string>
+
+Note:
+    - You must have permission to read/write the process memory (run as root).
+    - Replacement string must not be longer than the original.
 """
 
 import sys
 import os
 
 
-def print_usage():
-    print("İstifadə: {} pid axtarılan_string yeni_string".format(sys.argv[0]))
-    print("Misal:    sudo python3 {} 6515 Holberton maroua".format(sys.argv[0]))
-
-
 def find_heap(pid):
     """
-    /proc/<pid>/maps faylından heap bölgəsini tapır.
-    Qaytarır: (başlanğıc_addr, son_addr) və ya None
+    Parse /proc/<pid>/maps to locate the heap segment.
+
+    Args:
+        pid (str): Process ID
+
+    Returns:
+        tuple: (start_address, end_address) of the heap as integers
     """
-    maps_file = "/proc/{}/maps".format(pid)
     try:
-        with open(maps_file, "r") as f:
-            for line in f:
-                # "[heap]" olan sətri axtar
-                if "[heap]" in line:
-                    # Formatı: aaaaaa-bbbbbb rw-p ...
-                    parts = line.split()
-                    addr_range = parts[0]
-                    start_str, end_str = addr_range.split("-")
-                    start = int(start_str, 16)
-                    end   = int(end_str,   16)
-                    print("[*] Heap tapıldı: 0x{:x} - 0x{:x} "
-                          "(ölçü: {} bayt)".format(start, end, end - start))
-                    return start, end
-    except PermissionError:
-        print("[!] İcazə yoxdur — sudo ilə işlət")
-        sys.exit(1)
+        with open(f'/proc/{pid}/maps', 'r') as maps_file:
+            for line in maps_file:
+                if '[heap]' not in line:
+                    continue
+
+                parts = line.split()
+                start_str, end_str = parts[0].split('-')
+                start = int(start_str, 16)
+                end = int(end_str, 16)
+                return start, end
     except FileNotFoundError:
-        print("[!] PID {} tapılmadı".format(pid))
+        print(f'Error: Process {pid} not found', file=sys.stdout)
         sys.exit(1)
-    return None, None
-
-
-def read_heap(pid, start, end):
-    """
-    /proc/<pid>/mem vasitəsilə heap məzmununu oxuyur.
-    """
-    mem_file = "/proc/{}/mem".format(pid)
-    size = end - start
-    try:
-        with open(mem_file, "rb") as f:
-            f.seek(start)
-            heap_data = f.read(size)
-        return heap_data
-    except PermissionError:
-        print("[!] /proc/{}/mem oxumaq üçün icazə yoxdur".format(pid))
+    except (IOError, OSError) as e:
+        print(f'Error reading process maps: {e}', file=sys.stdout)
         sys.exit(1)
 
+    print('Error: Heap not found', file=sys.stdout)
+    sys.exit(1)
 
-def write_heap(pid, offset, new_bytes):
+
+def get_heap(pid, start, end):
     """
-    /proc/<pid>/mem vasitəsilə heap-ə yeni dəyər yazır.
+    Read the heap segment from /proc/<pid>/mem.
+
+    Args:
+        pid (str): Process ID
+        start (int): Start address of the heap
+        end (int): End address of the heap
+
+    Returns:
+        bytes: Heap content
     """
-    mem_file = "/proc/{}/mem".format(pid)
     try:
-        with open(mem_file, "rb+") as f:
-            f.seek(offset)
-            f.write(new_bytes)
-        print("[+] Uğurla yazıldı!")
+        with open(f'/proc/{pid}/mem', 'rb') as heap:
+            heap.seek(start)
+            return heap.read(end - start)
     except PermissionError:
-        print("[!] /proc/{}/mem-ə yazmaq üçün icazə yoxdur".format(pid))
+        print('Error: Permission denied. Run with sudo', file=sys.stdout)
+        sys.exit(1)
+    except (IOError, OSError) as e:
+        print(f'Error reading heap memory: {e}', file=sys.stdout)
+        sys.exit(1)
+
+
+def write_heap(pid, address, data):
+    """
+    Write data to a specific address in the process heap.
+
+    Args:
+        pid (str): Process ID
+        address (int): Memory address to write to
+        data (bytes): Data to write
+    """
+    try:
+        with open(f'/proc/{pid}/mem', 'rb+') as heap:
+            heap.seek(address)
+            heap.write(data)
+    except PermissionError:
+        print('Error: Permission denied. Run with sudo', file=sys.stdout)
+        sys.exit(1)
+    except (IOError, OSError) as e:
+        print(f'Error writing to heap memory: {e}', file=sys.stdout)
         sys.exit(1)
 
 
 def main():
-    # ── Arqument yoxlaması ─────────────────────────────────────────────────
+    """
+    Main function: Parse args, find heap, locate and replace string in memory.
+    """
     if len(sys.argv) != 4:
-        print_usage()
+        print("Usage: read_write_heap.py <pid> <search_str> <replace_str>",
+              file=sys.stdout)
         sys.exit(1)
 
-    pid        = sys.argv[1]
-    search_str = sys.argv[2]
-    new_str    = sys.argv[3]
-
-    # PID rəqəm olmalıdır
-    if not pid.isdigit():
-        print("[!] PID rəqəm olmalıdır")
-        print_usage()
+    # Validate PID is numeric
+    try:
+        pid_int = int(sys.argv[1])
+        if pid_int <= 0:
+            raise ValueError
+    except ValueError:
+        print("Error: PID must be a positive integer", file=sys.stdout)
         sys.exit(1)
 
-    pid = int(pid)
-
-    print("[*] PID         : {}".format(pid))
-    print("[*] Axtarılan   : '{}'".format(search_str))
-    print("[*] Yeni string : '{}'".format(new_str))
-
-    # Yeni string köhnədən uzun olmamalıdır (null terminator üçün)
-    search_bytes = search_str.encode("utf-8") + b"\x00"
-    new_bytes    = new_str.encode("utf-8")    + b"\x00"
-
-    if len(new_bytes) > len(search_bytes):
-        print("[!] Xəbərdarlıq: yeni string köhnədən uzundur ({} > {})".format(
-            len(new_bytes), len(search_bytes)))
-        print("    Bu heap korrupsiyasına səbəb ola bilər!")
-        # Yenə də davam edirik, amma xəbərdar edirik
-
-    # ── Heap bölgəsini tap ─────────────────────────────────────────────────
-    heap_start, heap_end = find_heap(pid)
-    if heap_start is None:
-        print("[!] Heap tapılmadı")
+    # Check if process exists
+    if not os.path.exists(f'/proc/{sys.argv[1]}'):
+        print(f"Error: Process {sys.argv[1]} not found", file=sys.stdout)
         sys.exit(1)
 
-    # ── Heap məzmununu oxu ─────────────────────────────────────────────────
-    print("[*] Heap oxunur...")
-    heap_data = read_heap(pid, heap_start, heap_end)
+    pid = sys.argv[1]
+    search = sys.argv[2].encode('ASCII')
+    replace_raw = sys.argv[3].encode('ASCII')
 
-    # ── Stringi heap-də axtar ──────────────────────────────────────────────
-    search_no_null = search_str.encode("utf-8")
-    idx = heap_data.find(search_no_null)
-
-    if idx == -1:
-        print("[!] '{}' heap-də tapılmadı".format(search_str))
+    # Validate replacement string is not longer than search string
+    if len(replace_raw) > len(search):
+        print(f"Error: Replacement string too long "
+              f"({len(replace_raw)} > {len(search)})", file=sys.stdout)
         sys.exit(1)
 
-    absolute_offset = heap_start + idx
-    print("[*] '{}' tapıldı → heap offset: {} | ünvan: 0x{:x}".format(
-        search_str, idx, absolute_offset))
+    # Pad replacement string with null bytes to match search length
+    replace = replace_raw.ljust(len(search), b'\x00')
 
-    # ── Yeni stringi yaz ───────────────────────────────────────────────────
-    # Qalan baytları \x00 ilə doldur (köhnə stringin izlərini sil)
-    pad_len   = len(search_no_null) - len(new_str.encode("utf-8"))
-    write_data = new_str.encode("utf-8") + b"\x00" * (pad_len + 1)
+    # Find heap boundaries
+    start, end = find_heap(pid)
 
-    print("[*] 0x{:x} ünvanına yazılır: {}".format(
-        absolute_offset, write_data))
-    write_heap(pid, absolute_offset, write_data)
+    # Read heap memory
+    mem = get_heap(pid, start, end)
 
-    print("[+] Tamamlandı! Proses indi '{}' çap etməlidir.".format(new_str))
+    # Find search string in heap
+    index = mem.find(search)
+    if index == -1:
+        print(f"Error: String '{sys.argv[2]}' not found in heap",
+              file=sys.stdout)
+        sys.exit(1)
+
+    # Calculate absolute address and write replacement
+    search_addr = start + index
+    write_heap(pid, search_addr, replace)
 
 
 if __name__ == "__main__":
