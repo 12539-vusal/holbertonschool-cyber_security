@@ -1,0 +1,17 @@
+{
+    "flag_1": "af6686001ac4e905a57e9177f84b4fbb",
+    "message": {
+        "balance": 1022.4000000000001,
+        "cards_id": [
+            "b851c6bd99bc4e08b0f16732891d39d2"
+        ],
+        "created_at": 1775298440,
+        "customer_id": "6748f18138004c52a9d52581049a7fcd",
+        "id": "f327f7771e9442b88bc2fd5ed3e57f30",
+        "number": "105872091467",
+        "routing": "106190003",
+        "updated_at": 1775298440
+    },
+    "status": "success"
+}
+
