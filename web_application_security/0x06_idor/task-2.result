@@ -1,0 +1,20 @@
+{
+    "flag_2": "f6e49fadaf845d7997829603792a46b3",
+    "message": {
+        "accounts_id": [
+            "3fa57d88d8a04f4fb7d0edd1b63ad2d0",
+            "cd51837f6aa943b590e96b36d750cf97"
+        ],
+        "created_at": 1775298448,
+        "expenses": 150526.4,
+        "firstname": "Yosri",
+        "id": "5c25f30df560422f9aa18ad55d60a360",
+        "income": 131710.6,
+        "lastname": "Musk",
+        "total_balance": 18815.8,
+        "updated_at": 1775298448,
+        "username": "yosri"
+    },
+    "status": "success"
+}
+    
