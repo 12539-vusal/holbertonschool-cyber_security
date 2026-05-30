@@ -29,6 +29,7 @@ if options[:add]
   puts "Task '#{options[:add]}' added."
 elsif options[:list]
   tasks = load_tasks
+  puts "Tasks:"
   tasks.each_with_index { |t, i| puts "#{i + 1}. #{t}" }
 elsif options[:remove]
   tasks = load_tasks
